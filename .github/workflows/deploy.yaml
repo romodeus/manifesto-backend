@@ -26,6 +26,6 @@ jobs:
             export REDIS_HOST=${{ secrets.REDIS_HOST }}
             git pull origin main
             go mod tidy
-            docker compose down
+            docker-compose down
             docker rmi shortly
-            docker compose up -d
+            docker-compose up -d

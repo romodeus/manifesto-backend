@@ -1,4 +1,4 @@
-# Immersive Dashboard App - Documentation.
+# Dashboard App - Documentation.
 
 ## Required Stuff:
 
@@ -25,12 +25,3 @@ Command to start testing :
 ```bash
 ./test.sh
 ```
-
-## Database Schema (ERD):
-
-Read the ERD's database schema [here](https://drive.google.com/file/d/1E2-VqgazpBtwbAIFZ3tXW5SGq-Qshg5Q/view) (Draw.io) 
-
-## OpenApi - Documentation:
-
-Read the documentation of Api's Endpoints [here](https://app.swaggerhub.com/apis-docs/vizucode/immersive-dashboard-api/1.0.0#/) (Swagger)
-

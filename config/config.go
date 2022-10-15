@@ -6,14 +6,11 @@ import (
 )
 
 type AppConfig struct {
-	DB_NAME     string
-	DB_HOST     string
-	DB_PORT     int
-	DB_USER     string
-	DB_PASS     string
-	SERVER_PORT string
-	JWT_SECRET  string
-	BASE_URL    string
+	REDIS_HOST     string
+	REDIS_PASSWORD string
+	SERVER_PORT    string
+	JWT_SECRET     string
+	BASE_URL       string
 }
 
 var mutex = sync.Mutex{}
@@ -25,8 +22,11 @@ func GetConfig() *AppConfig {
 }
 
 func loadConfig() *AppConfig {
+
 	return &AppConfig{
-		SERVER_PORT: os.Getenv("SERVER_PORT"),
-		BASE_URL:    os.Getenv("BASE_URL"),
+		SERVER_PORT:    os.Getenv("SERVER_PORT"),
+		BASE_URL:       os.Getenv("BASE_URL"),
+		REDIS_HOST:     os.Getenv("REDIS_HOST") + ":" + os.Getenv("REDIS_PORT"),
+		REDIS_PASSWORD: os.Getenv("REDIS_PASSWORD"),
 	}
 }

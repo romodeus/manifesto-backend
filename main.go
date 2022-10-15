@@ -3,6 +3,8 @@ package main
 import (
 	"immersive/config"
 	"immersive/exceptions"
+	"immersive/routes"
+	redisclient "immersive/utils/redis-client"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo/v4"
@@ -33,7 +35,9 @@ func main() {
 		AllowMethods: []string{echo.GET, echo.POST, echo.PUT, echo.DELETE, echo.OPTIONS},
 	}))
 
-	// routes.InitRoutes(e, db, cfg)
+	rediscli := redisclient.NewRedisCli(cfg.REDIS_HOST, cfg.REDIS_PASSWORD)
+
+	routes.InitRoutes(e, rediscli, cfg)
 
 	err := e.Start(":" + cfg.SERVER_PORT)
 

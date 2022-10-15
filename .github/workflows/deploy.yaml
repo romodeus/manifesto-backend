@@ -21,6 +21,9 @@ jobs:
             cd /home/ubuntu/shortly
             export SERVER_PORT=${{ secrets.SERVER_PORT }}
             export BASE_URL=${{ secrets.BASE_URL }}
+            export REDIS_PASSWORD=${{ secrets.REDIS_PASSWORD }}
+            export REDIS_PORT=${{ secrets.REDIS_PORT }}
+            export REDIS_HOST=${{ secrets.REDIS_HOST }}
             git pull origin main
             go mod tidy
             docker compose down

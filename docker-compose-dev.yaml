@@ -1,17 +1,36 @@
 version: "3"
 
 services:
+  cache:
+    image: redis:6.2.7-alpine
+    restart: always
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+    volumes:
+      - cache:/data
+    command: redis-server --save 20 1 --loglevel warning --requirepass ${REDIS_PASSWORD}
+    networks:
+      - backend
   apps: 
     build: 
       context: .
       dockerfile: Dockerfile
-    image: shortly
-    depends_on:
-      - db
     container_name: shortly
+    depends_on:
+      - cache
+    image: shortly
     ports: 
       - ${SERVER_PORT}:${SERVER_PORT}
     environment:
       SERVER_PORT: ${SERVER_PORT}
       BASE_URL: ${BASE_URL}
-
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: ${REDIS_PORT}
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+    networks:
+      - backend
+volumes:
+  cache:
+    driver: local
+networks:
+  backend:

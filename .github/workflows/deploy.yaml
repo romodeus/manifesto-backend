@@ -1,0 +1,28 @@
+name: deploy to EC2
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: connect to the server and deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /home/ubuntu/shortly
+            export SERVER_PORT=${{ secrets.SERVER_PORT }}
+            export BASE_URL=${{ secrets.BASE_URL }}
+            git pull origin main
+            go mod tidy
+            docker compose down
+            docker rmi shortly
+            docker compose up -d

@@ -34,5 +34,3 @@ volumes:
     driver: local
 networks:
   backend:
-    driver: backend-driver
-

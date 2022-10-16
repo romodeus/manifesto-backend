@@ -15,9 +15,14 @@ func New(repo manifestentity.IRepoManifest) *manifestService {
 	}
 }
 
-func (s *manifestService) Create(ManifestEntity manifestentity.Manifest) error {
+func (s *manifestService) Create(ManifestEntity manifestentity.Manifest) (manifestentity.Manifest, error) {
 	ManifestEntity.CustomURL = helpers.URIFormat(ManifestEntity.CustomURL)
-	return s.Repo.Save(ManifestEntity)
+	err := s.Repo.Save(ManifestEntity)
+	if err != nil {
+		return manifestentity.Manifest{}, err
+	}
+
+	return s.Repo.Get(ManifestEntity)
 }
 
 func (s *manifestService) Get(ManifestEntity manifestentity.Manifest) (manifestentity.Manifest, error) {

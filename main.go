@@ -1,10 +1,10 @@
 package main
 
 import (
-	"immersive/config"
-	"immersive/exceptions"
-	"immersive/routes"
-	redisclient "immersive/utils/redis-client"
+	"manifesto/config"
+	"manifesto/exceptions"
+	"manifesto/routes"
+	redisclient "manifesto/utils/redis-client"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo/v4"

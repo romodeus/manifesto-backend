@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/ubuntu/manifesto-backed
+            cd /home/ubuntu/manifesto-backend
             export SERVER_PORT=${{ secrets.SERVER_PORT }}
             export BASE_URL=${{ secrets.BASE_URL }}
             export REDIS_PASSWORD=${{ secrets.REDIS_PASSWORD }}

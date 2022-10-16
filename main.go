@@ -36,7 +36,6 @@ func main() {
 	}))
 
 	rediscli := redisclient.NewRedisCli(cfg.REDIS_HOST, cfg.REDIS_PASSWORD)
-	defer rediscli.Close()
 
 	routes.InitRoutes(e, rediscli, cfg)
 

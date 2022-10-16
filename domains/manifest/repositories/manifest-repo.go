@@ -18,8 +18,8 @@ func New(rediscli *redis.Client) *manifestRepo {
 }
 
 func (r *manifestRepo) Save(ManifestEntity manifestentity.Manifest) error {
-	if err := r.Rds.Set(ManifestEntity.CustomURL, ManifestEntity.RealURL, 0); err != nil {
-		return exceptions.NewInternalServerError(err.Err().Error())
+	if err := r.Rds.Set(ManifestEntity.CustomURL, ManifestEntity.RealURL, 0); err.Err() != nil {
+		return exceptions.NewInternalServerError(err.String())
 	}
 	return nil
 }
@@ -33,6 +33,7 @@ func (r *manifestRepo) Get(ManifestEntity manifestentity.Manifest) (manifestenti
 	}
 
 	return manifestentity.Manifest{
-		RealURL: URLString,
+		CustomURL: ManifestEntity.CustomURL,
+		RealURL:   URLString,
 	}, nil
 }

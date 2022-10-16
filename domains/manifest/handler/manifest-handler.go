@@ -1,6 +1,7 @@
 package manifesthandler
 
 import (
+	"manifesto/config"
 	manifestentity "manifesto/domains/manifest/entities"
 	"manifesto/exceptions"
 	"manifesto/utils/helpers"
@@ -20,6 +21,8 @@ func New(service manifestentity.IServiceManifest) *manifestHandler {
 }
 
 func (s *manifestHandler) Post(c echo.Context) error {
+	cfg := config.GetConfig()
+
 	request := Request{}
 	err := c.Bind(&request)
 	if err != nil {
@@ -41,11 +44,13 @@ func (s *manifestHandler) Post(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, helpers.SuccessGetResponseData(map[string]interface{}{
-		"url": result.CustomURL,
+		"custom_url": cfg.BASE_URL + "/" + result.CustomURL,
+		"real_url":   result.RealURL,
 	}))
 }
 
 func (s *manifestHandler) Get(c echo.Context) error {
+	cfg := config.GetConfig()
 	manifest := manifestentity.Manifest{}
 	manifest.CustomURL = c.Param("key")
 
@@ -56,7 +61,8 @@ func (s *manifestHandler) Get(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, helpers.SuccessGetResponseData(map[string]interface{}{
-		"url": result.CustomURL,
+		"custom_url": cfg.BASE_URL + "/" + result.CustomURL,
+		"real_url":   result.RealURL,
 	}))
 }
 

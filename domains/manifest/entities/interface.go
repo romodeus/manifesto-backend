@@ -6,6 +6,6 @@ type IRepoManifest interface {
 }
 
 type IServiceManifest interface {
-	Create(ManifestEntity Manifest) (Manifest, error)
+	CustomURLCreate(ManifestEntity Manifest) (Manifest, error)
 	Get(ManifestEntity Manifest) (Manifest, error)
 }

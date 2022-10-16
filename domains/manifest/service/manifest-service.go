@@ -16,7 +16,7 @@ func New(repo manifestentity.IRepoManifest) *manifestService {
 	}
 }
 
-func (s *manifestService) Create(ManifestEntity manifestentity.Manifest) (manifestentity.Manifest, error) {
+func (s *manifestService) CustomURLCreate(ManifestEntity manifestentity.Manifest) (manifestentity.Manifest, error) {
 	ManifestEntity.CustomURL = helpers.URIFormat(ManifestEntity.CustomURL)
 
 	result, _ := s.Repo.Get(ManifestEntity)

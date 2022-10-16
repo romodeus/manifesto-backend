@@ -7,6 +7,6 @@ WORKDIR /app
 COPY . .
 
 RUN go mod tidy
-RUN go build -o shortly
+RUN go build -o manifesto
 
-CMD ["./shortly"]
+CMD ["./manifesto"]

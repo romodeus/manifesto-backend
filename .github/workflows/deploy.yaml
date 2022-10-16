@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/ubuntu/shortly
+            cd /home/ubuntu/manifesto-backed
             export SERVER_PORT=${{ secrets.SERVER_PORT }}
             export BASE_URL=${{ secrets.BASE_URL }}
             export REDIS_PASSWORD=${{ secrets.REDIS_PASSWORD }}
@@ -27,5 +27,5 @@ jobs:
             git pull origin main
             go mod tidy
             docker compose down
-            docker rmi shortly
+            docker rmi manifesto
             docker compose up -d

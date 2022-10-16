@@ -15,10 +15,10 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: shortly
+    container_name: manifesto
     depends_on:
       - cache
-    image: shortly
+    image: manifesto
     ports: 
       - ${SERVER_PORT}:${SERVER_PORT}
     environment:

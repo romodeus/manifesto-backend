@@ -86,6 +86,12 @@ func validationError(err error, c echo.Context) bool {
 			case "email":
 				report = fmt.Sprintf("%s is not valid email",
 					err.Field())
+			case "max":
+				report = fmt.Sprintf("character length must less than %s",
+					err.Field())
+			case "min":
+				report = fmt.Sprintf("character length must greater than %s",
+					err.Field())
 			case "gte":
 				report = fmt.Sprintf("%s value must be greater than %s",
 					err.Field(), err.Param())

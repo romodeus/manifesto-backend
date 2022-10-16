@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "628953ad-6e6c-4304-bdea-f81b47ecbaa5",
+		"name": "manifesto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get by key",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/manifest/test123",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"manifest",
+						"test123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "custom_url",
+							"value": "test123",
+							"type": "text"
+						},
+						{
+							"key": "real_url",
+							"value": "https://github.com/romodeus/manifesto-backend",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/manifest",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"manifest"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

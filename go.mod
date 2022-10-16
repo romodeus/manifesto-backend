@@ -1,4 +1,4 @@
-module immersive
+module manifesto
 
 go 1.18
 

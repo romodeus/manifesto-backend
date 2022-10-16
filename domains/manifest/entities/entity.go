@@ -1,4 +1,4 @@
-package manifestentities
+package manifestentity
 
 type Manifest struct {
 	CustomURL string

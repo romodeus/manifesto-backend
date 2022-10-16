@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"immersive/config"
+	"manifesto/config"
 
 	"github.com/go-redis/redis"
 	"github.com/labstack/echo/v4"

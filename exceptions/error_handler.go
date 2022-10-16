@@ -2,7 +2,7 @@ package exceptions
 
 import (
 	"fmt"
-	"immersive/utils/helpers"
+	"manifesto/utils/helpers"
 	"net/http"
 
 	"github.com/go-playground/validator/v10"

@@ -34,7 +34,7 @@ func (s *manifestHandler) Post(c echo.Context) error {
 		return err
 	}
 
-	result, err := s.Service.Create(manifestentity.Manifest{
+	result, err := s.Service.CustomURLCreate(manifestentity.Manifest{
 		CustomURL: request.CustomURL,
 		RealURL:   request.RealURL,
 	})

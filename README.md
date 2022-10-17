@@ -99,6 +99,7 @@ This the tech stack that we used for develope Manifest for the backend
 
 * [![AWS][aws]][aws-url]
 * [![Golang][golang]][golang-url]
+* [![Redis][redis]][redis-url]
 * [![Echo][echo]][echo-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -198,14 +199,17 @@ Github: [https://github.com/arch-havis](https://github.com/arch-havis)
 [linkedinhavis-url]: https://www.linkedin.com/in/havis-iqbal/
 
 
-[echo]: https://img.shields.io/badge/Echo-00ADD8?style=for-the-badge&logo=images/echo-logo&logoColor=FF3E00
+[echo]: https://img.shields.io/badge/Echo-gray?style=for-the-badge&logo=images/echo-logo&logoColor=00ADD8
 [echo-url]: https://echo.labstack.com/
 
-[s3]: https://img.shields.io/badge/S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white
+[s3]: https://img.shields.io/badge/S3-gray?style=for-the-badge&logo=amazons3&logoColor=569A31
 [s3-url]: https://aws.amazon.com/s3/
 
-[aws]: https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white
+[aws]: https://img.shields.io/badge/AWS-gray?style=for-the-badge&logo=amazonaws&logoColor=FF9900
 [aws-url]: https://aws.amazon.com/
 
-[golang]: https://img.shields.io/badge/golang-00ADD8?style=for-the-badge&logo=go&logoColor=white
+[golang]: https://img.shields.io/badge/golang-gray?style=for-the-badge&logo=go&logoColor=00ADD8
 [golang-url]: https://go.dev/
+
+[redis]: https://img.shields.io/badge/redis-gray?style=for-the-badge&logo=redis&logoColor=red
+[redis-url]: https://redis.io/

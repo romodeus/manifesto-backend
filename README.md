@@ -116,8 +116,8 @@ This the tech stack that we used for develope Manifest for the backend
 
 <br />
 <div align="center">
-  <a href="https://drive.google.com/file/d/1UOrWfX2TTQwPeQBTwoIz1HtPA2oF39c3/view?usp=sharing">
-    <img src="images/erd.jpg" alt="Logo">
+  <a href="https://drive.google.com/file/d/1WlAkGL4msOUllDYRa2RahTGXCSUI8vzt/view?usp=sharing">
+    <img src="https://ibb.co/y4LT9Bb" alt="Logo">
   </a>
 </div>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

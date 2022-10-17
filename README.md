@@ -29,7 +29,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/romodeus/manifesto-backend">
-    <img src="images/banner.jpg" alt="Logo">
+    <img src="https://i.ibb.co/LhhFrxd/Group-1.png" alt="Logo">
   </a>
 
   <h3 align="center">Manifesto API</h3>

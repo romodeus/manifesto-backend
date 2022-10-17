@@ -25,7 +25,7 @@ func loadConfig() *AppConfig {
 
 	return &AppConfig{
 		SERVER_PORT:    os.Getenv("SERVER_PORT"),
-		BASE_URL:       os.Getenv("BASE_URL") + ":" + os.Getenv("SERVER_PORT"),
+		BASE_URL:       os.Getenv("BASE_URL"),
 		REDIS_HOST:     os.Getenv("REDIS_HOST") + ":" + os.Getenv("REDIS_PORT"),
 		REDIS_PASSWORD: os.Getenv("REDIS_PASSWORD"),
 	}

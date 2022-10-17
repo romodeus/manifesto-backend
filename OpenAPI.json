@@ -1,0 +1,270 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "manifesto",
+    "description": "**Manifesto** is an software to make your own custom url, look simple and easier to remember",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://example.com",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/manifest/github": {
+      "get": {
+        "tags": [
+          "Get Custom URL"
+        ],
+        "summary": "get by key",
+        "operationId": "getbykey",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Vary": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Origin"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 17 Oct 2022 04:18:30 GMT"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "125"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=UTF-8": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/getbykey"
+                    },
+                    {
+                      "example": {
+                        "data": {
+                          "custom_url": "18.142.230.254:80/github",
+                          "real_url": "https://github.com/romodeus/manifesto-backend"
+                        },
+                        "success": true
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "data": {
+                    "custom_url": "18.142.230.254:80/github",
+                    "real_url": "https://github.com/romodeus/manifesto-backend"
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/manifest": {
+      "post": {
+        "tags": [
+          "Create Custom URL"
+        ],
+        "summary": "create url",
+        "operationId": "createurl",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "custom_url",
+                  "real_url"
+                ],
+                "type": "object",
+                "properties": {
+                  "custom_url": {
+                    "type": "string",
+                    "example": "github"
+                  },
+                  "real_url": {
+                    "type": "string",
+                    "example": "https://github.com/romodeus/manifesto-backend"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Vary": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Origin"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 17 Oct 2022 04:18:01 GMT"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "125"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=UTF-8": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/createurl"
+                    },
+                    {
+                      "example": {
+                        "data": {
+                          "custom_url": "18.142.230.254:80/github",
+                          "real_url": "https://github.com/romodeus/manifesto-backend"
+                        },
+                        "success": true
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "data": {
+                    "custom_url": "18.142.230.254:80/github",
+                    "real_url": "https://github.com/romodeus/manifesto-backend"
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "getbykey": {
+        "title": "getbykey",
+        "required": [
+          "data",
+          "success"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Data"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "data": {
+            "custom_url": "18.142.230.254:80/github",
+            "real_url": "https://github.com/romodeus/manifesto-backend"
+          },
+          "success": true
+        }
+      },
+      "Data": {
+        "title": "Data",
+        "required": [
+          "custom_url",
+          "real_url"
+        ],
+        "type": "object",
+        "properties": {
+          "custom_url": {
+            "type": "string"
+          },
+          "real_url": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "custom_url": "18.142.230.254:80/github",
+          "real_url": "https://github.com/romodeus/manifesto-backend"
+        }
+      },
+      "createurl": {
+        "title": "createurl",
+        "required": [
+          "data",
+          "success"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Data"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "data": {
+            "custom_url": "18.142.230.254:80/github",
+            "real_url": "https://github.com/romodeus/manifesto-backend"
+          },
+          "success": true
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Get Custom URL"
+    },
+    {
+      "name": "Create Custom URL"
+    }
+  ]
+}

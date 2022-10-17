@@ -8,7 +8,7 @@
   },
   "servers": [
     {
-      "url": "http://example.com",
+      "url": "https://man.romodeus.site",
       "variables": {}
     }
   ],
@@ -66,7 +66,7 @@
                     {
                       "example": {
                         "data": {
-                          "custom_url": "18.142.230.254:80/github",
+                          "custom_url": "https://man.romodeus.site/github",
                           "real_url": "https://github.com/romodeus/manifesto-backend"
                         },
                         "success": true
@@ -76,7 +76,7 @@
                 },
                 "example": {
                   "data": {
-                    "custom_url": "18.142.230.254:80/github",
+                    "custom_url": "https://man.romodeus.site/github",
                     "real_url": "https://github.com/romodeus/manifesto-backend"
                   },
                   "success": true

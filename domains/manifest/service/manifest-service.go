@@ -19,16 +19,14 @@ func New(repo manifestentity.IRepoManifest) *manifestService {
 
 func (s *manifestService) CustomURLCreate(ManifestEntity manifestentity.Manifest) (manifestentity.Manifest, error) {
 	ManifestEntity.CustomURL = helpers.URIFormat(ManifestEntity.CustomURL)
+	fmt.Println(ManifestEntity.CustomURL)
 
-	result, err := s.Repo.Get(ManifestEntity)
-	if err != nil {
-		fmt.Println("get first", err)
-	}
+	result, _ := s.Repo.Get(ManifestEntity)
 	if result.CustomURL != "" {
 		return manifestentity.Manifest{}, exceptions.NewBadRequestError("custom url has been used")
 	}
 
-	err = s.Repo.Save(ManifestEntity)
+	err := s.Repo.Save(ManifestEntity)
 	if err != nil {
 		fmt.Println("error after save", err)
 		return manifestentity.Manifest{}, err

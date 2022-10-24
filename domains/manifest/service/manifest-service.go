@@ -1,7 +1,6 @@
 package service
 
 import (
-	"fmt"
 	manifestentity "manifesto/domains/manifest/entities"
 	"manifesto/exceptions"
 	"manifesto/utils/helpers"
@@ -27,7 +26,6 @@ func (s *manifestService) CustomURLCreate(ManifestEntity manifestentity.Manifest
 
 	err := s.Repo.Save(ManifestEntity)
 	if err != nil {
-		fmt.Println("error after save", err)
 		return manifestentity.Manifest{}, err
 	}
 

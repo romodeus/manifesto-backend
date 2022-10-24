@@ -1,7 +1,6 @@
 package manifesthandler
 
 import (
-	"fmt"
 	"manifesto/config"
 	manifestentity "manifesto/domains/manifest/entities"
 	"manifesto/exceptions"
@@ -41,7 +40,6 @@ func (s *manifestHandler) Post(c echo.Context) error {
 	})
 
 	if err != nil {
-		fmt.Println(err)
 		return err
 	}
 

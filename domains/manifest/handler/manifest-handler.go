@@ -73,7 +73,7 @@ func (s *manifestHandler) Redirect(c echo.Context) error {
 	result, err := s.Service.Get(manifest)
 
 	if err != nil {
-		return err
+		return c.Redirect(http.StatusPermanentRedirect, config.NOT_FOUND_URL_REDIRECT)
 	}
 
 	return c.Redirect(http.StatusPermanentRedirect, result.RealURL)
